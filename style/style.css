@@ -1,14 +1,9 @@
-html {
-    position: relative;
-    box-sizing: border-box;
-    min-height: 100vh;
-}
+
 h1, p,a ,h2{
     font-family: 'Hammersmith One', sans-serif;
 }
 body {
     background: #6b5340;
-    /* outline: red solid 2px; */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -20,7 +15,6 @@ header {
     background-color: rgb(236,204,140);
     width: 100%;
     display: flex;
-    /* position: fixed; */
     align-items: stretch;
     justify-content: center;
     max-height: 4rem;
@@ -28,7 +22,6 @@ header {
 header img {
     max-height: 4rem;
 }
-
 header nav {
     display: flex;
     flex-direction: row;
@@ -58,8 +51,6 @@ header h1 {
 footer {
     background:#eccc8c;
     height: 5.5rem;
-    /* position: absolute;
-    bottom: 0; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -70,8 +61,6 @@ footer {
     padding: 0% 2rem;
 } 
 main {
-    /* outline: blue solid 2px; */
-    /* width: 100%; */
     margin: 1rem;
     margin-top: 2rem;
     display: flex;
@@ -90,7 +79,6 @@ li {
     font-size: 1.25rem ;
 }
 ul {
-    /* outline: red solid 2px; */
     list-style-position: outside;
     list-style-type: square;
     margin: 1rem 10rem;
@@ -99,14 +87,12 @@ h2 {
     color: #c45c44;
     font-size: 2.5rem;
     margin: 1rem 3rem;
-    /* outline: blue solid 2px; */
 }
 
 a {
     text-decoration: none;
 }
 #ci {
-    /* outline: red solid 2px; */
     list-style-type: none;
     position: relative;
 }
