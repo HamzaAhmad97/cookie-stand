@@ -1,18 +1,22 @@
 
-h1, p,a ,h2{
-    font-family: 'Hammersmith One', sans-serif;
+a { text-decoration: none;}
+h1,p,a,h2{font-family: 'Roboto', sans-serif;}
+
+html {
+    width: 100%;
 }
 body {
-    background: #6b5340;
+    background: rgb(236,204,140);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     min-height: 100vh;
+    width: 100%;
 }
 header {
     margin: 0;
     padding: 1rem;
-    background-color: rgb(236,204,140);
+    background-color:  #6b5340;
     width: 100%;
     display: flex;
     align-items: stretch;
@@ -27,13 +31,13 @@ header nav {
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    width: 33%;
+    width: 33.5%;
     flex-grow: 1;
     padding-left: auto;
 }
 header a {
     text-decoration: none;
-    color: #33322a;
+    color:orange;
     text-align: center;
     align-self: center;
     margin: 0 1rem;
@@ -46,15 +50,17 @@ header h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 2rem;
+    color: orange;
+    font-weight: bold;
 }
 footer {
-    background:#eccc8c;
+    background:#6b5340;
     height: 5.5rem;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: stretch;
+    justify-content: center;
     margin: 0 auto;
     margin-top: 2rem;
     margin-bottom: 0;
@@ -66,12 +72,10 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 64vh;
-    outline: red 2px solid;
-    overflow-x: scroll;
+    border: #6b5340 3px groove;
 }
 main p {
     font-size: 1.75rem;
-    color: #d1c6bc;
     text-indent: 2rem;
     margin: 1rem;
 }
@@ -91,28 +95,28 @@ h2 {
     margin: 1rem 3rem;
 }
 
-a {
-    text-decoration: none;
-}
-#ci {
-    list-style-type: none;
-    position: relative;
-}
 footer section {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin: auto;
+}
+footer p {
+    color: orange;
+    margin: auto;
 }
 
 td {
     border: groove gray 1px;
     padding: 0.5em;
     text-align: center;
+    background-color:;
 }
 th {
     padding: 0.5em;
+    font-weight: bold;
 }
-/* #lastrow th:first-child {
-    font-size: 5rem;
-} */
+td:first-child {
+    font-weight: bold;
+}
+
