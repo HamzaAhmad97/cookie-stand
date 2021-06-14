@@ -66,6 +66,8 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 64vh;
+    outline: red 2px solid;
+    overflow-x: scroll;
 }
 main p {
     font-size: 1.75rem;
@@ -102,3 +104,15 @@ footer section {
     align-items: center;
 
 }
+
+td {
+    border: groove gray 1px;
+    padding: 0.5em;
+    text-align: center;
+}
+th {
+    padding: 0.5em;
+}
+/* #lastrow th:first-child {
+    font-size: 5rem;
+} */
