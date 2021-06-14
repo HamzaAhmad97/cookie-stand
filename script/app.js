@@ -1,66 +1,86 @@
 'use strict';
 
-let tbody = document.createElement('tbody');
+// let tbody = document.createElement('tbody');
 
-let hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00am','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm'];
-
-
+let hours = ['city\\hour','6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm', 'Total'];
 
 createHeaderAndFooter();
-
+////////////////////////////////////////////////////////
 function getRandCustPerHour(min, max) { //std alone function to return a random number of users
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-function updateLastRow(obj) {
-  let lastrow = document.getElementById('lastrow');
-  let lastRowElems = lastrow.children;
-  for (let i = 0 ; i < obj.CpH.length; i++) {
-    lastRowElems[i].textContent = Number(lastRowElems[i].textContent) + Number(obj.CpH[i]);
-  }
-}
-
+////////////////////////////////////////////////////////
 function createHeaderAndFooter() { //std alone
+
   let main = document.getElementById('main');
   let table = document.createElement('table');
+  let tbody = document.createElement('tbody');
+  tbody.setAttribute('id', 'tbody');
   let thead = document.createElement('thead');
   let tfoot = document.createElement('tfoot');
-  let trHead = document.createElement('tr');
-  let trFoot = document.createElement('tr');
   main.appendChild(table);
   table.append(thead, tbody, tfoot);
-  thead.appendChild(trHead);
-  tfoot.appendChild(trFoot);
-
-  let trFootLeftCell = document.createElement('th');
-  trFootLeftCell.textContent = '';
-  trFoot.appendChild(trFootLeftCell);
-
-  trFoot.setAttribute('id', 'lastrow');
-
-  let thHeadLeftCell = document.createElement('th');
-  thHeadLeftCell.textContent = '';
-  trHead.appendChild(thHeadLeftCell);
-
-  for (let i = 0; i < hours.length ; i++) {
-    let bodyCell = document.createElement('th');
-    bodyCell.textContent = hours[i];
-    trHead.appendChild(bodyCell);
-
-    let footerCell = document.createElement('th'); // setting an initial value for the cells in the foot to 0 which will get updated everytime an object is rendered
-    footerCell.textContent = 0;
-    trFoot.appendChild(footerCell);
+  
+  for (let i = 0; i < hours.length; i++) {
+    let headCell = document.createElement('th');
+    headCell.textContent = hours[i];
+    thead.appendChild(headCell);
   }
-  let thHTotal = document.createElement('th');
-  thHTotal.textContent = 'Total';
-  trHead.appendChild(thHTotal);
+  for (let i = 0; i < hours.length; i++) {
+    let footCell = document.createElement('th');
+    footCell.textContent = 'h';
+    tfoot.appendChild(footCell);
+  }
+  // let main = document.getElementById('main');
+  // let table = document.createElement('table');
+  // let thead = document.createElement('thead');
+  // let tfoot = document.createElement('tfoot');
+  // let trHead = document.createElement('tableRow');
+  // let trFoot = document.createElement('tableRow');
 
-  // let first = document.querySelector('lastrow th:first-child');
-  // let d = document.createElement('th');
-  // d.textContent = 'ffff';
-  // trFoot.insertBefore(d,trFoot.children[1]);
+  // let footerLeftCell = document.createElement('tableCell');
+  // footerLeftCell.textContent = '';
+  // trFoot.appendChild(footerLeftCell);
+  // let trFootSide = document.createElement('tableRow');
+  // trFoot.appendChild(trFootSide);
+  // trFootSide.setAttribute('id', 'lastrow');
+
+  // main.appendChild(table);
+  // table.append(thead, tbody, tfoot);
+  // thead.appendChild(trHead);
+  // tfoot.appendChild(trFoot);
+
+  // let lastrow = document.getElementById('lastrow');
+  // lastrow.setAttribute('colpan', '13');
+
+
+
+  // let thHeadLeftCell = document.createElement('th');
+  // thHeadLeftCell.textContent = '';
+  // trHead.appendChild(thHeadLeftCell);
+
+  // for (let i = 0; i < hours.length ; i++) {
+  //   let bodyCell = document.createElement('th');
+  //   bodyCell.textContent = hours[i];
+  //   trHead.appendChild(bodyCell);
+
+  //   let footerCell = document.createElement('th'); // setting an initial value for the cells in the foot to 0 which will get updated everytime an object is rendered
+  //   footerCell.textContent = 0;
+  //   lastrow.appendChild(footerCell);
+  // }
+  // let thHTotal = document.createElement('th');
+  // thHTotal.textContent = 'Total';
+  // trHead.appendChild(thHTotal);
 }
-
+////////////////////////////////////////////////////////
+// function updateLastRow(obj) {
+//   let lastrow = document.getElementById('lastrow');
+//   let lastRowElems = lastrow.children;
+//   for (let i = 0 ; i < obj.CpH.length; i++) {
+//     lastRowElems[i].textContent = Number(lastRowElems[i].textContent) + Number(obj.CpH[i]);
+//   }
+// }
+////////////////////////////////////////////////////////
 function City(name, minC,maxC, avgCpC) { // the constructor
   this.name = name;
   this.minC = minC;
@@ -68,26 +88,24 @@ function City(name, minC,maxC, avgCpC) { // the constructor
   this.avgCpC = avgCpC;
   this.CpH = [];
 }
-
+////////////////////////////////////////////////////////
 City.prototype.render = function() {
-  let tr = document.createElement('tr'); // creating a row for the city
-  tbody.appendChild(tr);
+  let tbody = document.getElementById('tbody');
+  let tableRow = document.createElement('tr'); // creating a row for the city
+  tbody.appendChild(tableRow);
 
-  let td = document.createElement('td'); // adding the city to the first cell
-  td.textContent = this.name;
-  tr.appendChild(td);
-
+  this.CpH.unshift(this.name);
   for (let i = 0; i < this.CpH.length; i++) { // adding the corresponding number of cookies for each city per hour
-    let td = document.createElement('td');
-    td.textContent = this.CpH[i];
-    tr.appendChild(td);
+    let tableCell = document.createElement('td');
+    tableCell.textContent = this.CpH[i];
+    tableRow.appendChild(tableCell);
   }
-  updateLastRow(this); // calling to update the last rwo which containd the total per each hour
+  // updateLastRow(this); // calling to update the last rwo which containd the total per each hour
 };
-
+////////////////////////////////////////////////////////
 City.prototype.genRandCpH = function() {
   let total = 0;
-  for (let i = 0; i < hours.length; i++){
+  for (let i = 0; i < hours.length - 2; i++){
     let randCustNo = getRandCustPerHour(this.minC, this.maxC);
     let cookPerHr = Math.ceil(randCustNo * this.avgCpC);
     this.CpH.push(cookPerHr); // adding the total number of cookies sold per hour to a list
@@ -95,8 +113,9 @@ City.prototype.genRandCpH = function() {
     // totPerHr[i] += cookPerHr;
   }
   this.CpH.push(total); // appending the total per day for each city to the end of the row
+  
 };
-
+////////////////////////////////////////////////////////
 
 // creating instances of the City class/ constructor
 let seattle = new City('Seattle',23,65,6.3);
@@ -114,7 +133,4 @@ paris.render();
 let lima = new City('Lima',2,16,4.6);
 lima.genRandCpH();
 lima.render();
-
-
-// console.log(totPerHr);
-// updateLastRow(seattle);
+////////////////////////////////////////////////////////
