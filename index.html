@@ -5,24 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/reset.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/style-index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <title>Main</title>
 </head>
 <body>
-    <header>
-        <h1>Pat's Salmon Cookies</h1>
-        <img src="/img/salmon.png" alt="salmon">
+    <header id="header">
+        <div id="logo">
+            <img src="/img/salmon.png" alt="salmon">
+            <h1>Pat's Salmon Cookies</h1>
+        </div>
         <nav>
-            <a href="/html/sales.html">Sales</a>
-            <a href="#">About</a>
-            <a href="#">Contact Us</a>
+            <div id="themeCont">
+                <label for="theme">Change Theme:</label>
+                <select name="theme" id="theme" onchange="changeTheme()">
+                    <option  value="def">Default</option>
+                    <option  value="bw">Black/White</option>
+                    <option  value="mono">Mono</option>
+                </select>
+            </div>
+            <div>
+                <img src="https://img.icons8.com/material/24/000000/sales-performance--v1.png"/>
+                <a href="/html/sales.html">Sales</a>
+                
+            </div>
+            <div>
+                <img src="https://img.icons8.com/material/24/000000/about--v1.png"/>
+                <a href="#about">About</a>
+                
+            </div>
+            <div>
+                <img src="https://img.icons8.com/material/24/000000/service.png"/>
+                <a id="contactUs" href="#contact">Contact us</a>
+                
+            </div>
         </nav>
+
     </header>
-    <main>
-        
+
+    <main id="main">
+        <h2 id="header1">Today's top cookies</h2>
+        <section id="top">
+            <div>
+                <img src="/img/top1.jpeg" alt="top1">
+                <h2>Salmon Special</h2>
+            </div>
+            <div>
+                <img src="/img/top2.jpg" alt="top2">
+                <h2>Grilled Salmon Regular</h2>
+
+            </div>
+            <div>
+                <img src="/img/top3.jpg" alt="top3">
+                <h2>Salmokie</h2>
+
+            </div>
+        </section>
         <article>
             <p>
             The cookie features Oreo's signature chocolate wafers sandwiched around a bright red Swedish Fish-flavored creme filling. The flavor looks like the mad scientists who work on Oreo's flavors got bored one day, decided to say "YOLO" and threw a bag of Swedish Fish in the blender with some creme filling. </p>
@@ -30,14 +74,38 @@
             <p>
             Swedish Fish have a slightly waxy texture and a wonderfully artificial cherry flavor to them. If you're thinking pairing this with chocolate cookies sounds god awful, well, others agree. "There's a processed chocolate aftertaste, but even then, it has to battle for supremacy with the cherry cough syrup layer that the creme plastered on the back of my throat," the Impulsive Buy wrote in a review of the product. </p>
         </article>
+
     </main>
-    <footer>
+
+    <footer id="footer">
+
+        <div id="about">
+            <h2>About us: </h2>
+            <section>
+                <p>We make cookies and stuff but using fish, you might be feeling uncomfortable, but we assure you that you will think that cookies are made for fish.</p>
+
+            </section>
+        </div>
+
+        <div id="contact">
+            <h2>Contact Info: </h2>
+            <section>
+                <a href="tel:123456789">Telephone: 155515551</a>
+                <a href="mailto:someone@gmail.com">Email: salmonareus.com</a>
+            </section>
+        </div>
+
+        <div id="social">
+            <h2>Social media: </h2>
+            <section>
+                <a href="https://twitter.com/">Twitter</a>
+                <a href="https://web.facebook.com/?_rdc=1&_rdr">Facebook</a>
+            </section>
+        </div>
+        
         <p>All rights reserved &copy; Hamza Ahmad 2021</p>
 
-        <section id="contactInfo">
-            <a href="tel:123456789">Telephone: 155515551</a>
-            <a href="mailto:someone@gmail.com">Email: salmonareus.com</a>
-        </section>
     </footer>
+    <script src="/script/appHome.js"></script>
 </body>
 </html>

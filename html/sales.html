@@ -5,35 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/reset.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/style-sales.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <title>Sales</title>
 </head>
 <body>
-    <header>
-        <h1>Sales Data</h1>
-        <img src="/img/salmon.png" alt="salmon">
+    <header id="header">
+        
+        <div id="logo">
+            <img src="/img/salmon.png" alt="salmon">
+            <h1>Pat's Salmon Cookies</h1>
+        </div>
         <nav>
-            <a href="/index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact Us</a>
+            <div id="themeCont">
+                <label for="theme">Change Theme:</label>
+                <select name="theme" id="theme" onchange="changeTheme()">
+                    <option  value="def">Default</option>
+                    <option  value="bw">Black/White</option>
+                    <option  value="mono">Mono</option>
+                </select>
+            </div>
+            <div>
+                <img src="https://img.icons8.com/material/24/000000/home--v5.png"/>                
+                <a href="/index.html">Home</a>
+                
+            </div>
+            <div>
+                <img src="https://img.icons8.com/material/24/000000/about--v1.png"/>
+                <a href="#about">About</a>
+                
+            </div>
+            <div>
+                <img src="https://img.icons8.com/material/24/000000/service.png"/>
+                <a id="contactUs" href="#contact">Contact us</a>
+                
+            </div>
         </nav>
+
     </header>
+
+
     <main id="main">
     </main>
     
-    <footer>
+    <footer id="footer">
+
+        <div id="about">
+            <h2>About us: </h2>
+            <section>
+                <p>We make cookies and stuff but using fish, you might be feeling uncomfortable, but we assure you that you will think that cookies are made for fish.</p>
+
+            </section>
+        </div>
+
+        <div id="contact">
+            <h2>Contact Info: </h2>
+            <section>
+                <a href="tel:123456789">Telephone: 155515551</a>
+                <a href="mailto:someone@gmail.com">Email: salmonareus.com</a>
+            </section>
+        </div>
+
+        <div id="social">
+            <h2>Social media: </h2>
+            <section>
+                <a href="https://twitter.com/">Twitter</a>
+                <a href="https://web.facebook.com/?_rdc=1&_rdr">Facebook</a>
+            </section>
+        </div>
+        
         <p>All rights reserved &copy; Hamza Ahmad 2021</p>
 
-        <section id="contactInfo">
-            <a href="tel:123456789">Telephone: 155515551</a>
-            <a href="mailto:someone@gmail.com">Email: salmonareus.com</a>
-        </section>
-        
     </footer>
+
     <script src="/script/app.js"></script>
 </body>
 </html>
