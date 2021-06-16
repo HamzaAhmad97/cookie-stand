@@ -272,6 +272,7 @@ label {
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
+
     background: orange; 
   }
   #otherImgs {
@@ -354,4 +355,7 @@ label {
   }
   #ot {
       margin-top: 2rem;
+
+    background: yellow; 
+
   }

@@ -1,5 +1,6 @@
+/* eslint-disable eqeqeq */
 'use strict';
-
+let arrOfObjects = [];
 let hours = ['City\\Hour','6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm', 'Total'];
 
 createHeaderAndFooter();
@@ -65,6 +66,7 @@ City.prototype.render = function() {
     tableCell.textContent = this.CpH[i];
     tableRow.appendChild(tableCell);
   }
+
   updateLastRow(this); // calling to update the last rwo which containd the total per each hour
 };
 ////////////////////////////////////////////////////////
@@ -80,24 +82,6 @@ City.prototype.genRandCpH = function() {
   this.CpH.push(total); // appending the total per day for each city to the end of the row
 
 };
-////////////////////////////////////////////////////////
-
-// creating instances of the City class/ constructor
-let seattle = new City('Seattle',23,65,6.3);
-seattle.genRandCpH();
-seattle.render();
-let tokyo = new City('Tokyo',3,24,1.2);
-tokyo.genRandCpH();
-tokyo.render();
-let dubai = new City('Dubai',11,38,3.7);
-dubai.genRandCpH();
-dubai.render();
-let paris = new City('Paris',20,38,2.3);
-paris.genRandCpH();
-paris.render();
-let lima = new City('Lima',2,16,4.6);
-lima.genRandCpH();
-lima.render();
 ////////////////////////////////////////////////////////
 
 function changeTheme(arg) {
@@ -135,3 +119,54 @@ function changeTheme(arg) {
     break;
   }
 }
+
+let form = document.getElementById('form');
+form.addEventListener('submit', addCity);
+let submitButton = document.getElementById('submit');
+let message = document.getElementById('message');
+
+function addCity(e) {
+  console.log('in addCity');
+  e.preventDefault();
+
+  let n = document.getElementById('fName').value;
+  let minc = Number(document.getElementById('fminC').value);
+  let maxc = Number(document.getElementById('fmaxC').value);
+  let apc = Number(document.getElementById('avgCpC').value);
+  
+
+  console.log(Number(n),'\t', minc,'\t',maxc,'\t',apc);
+  if (n == 0 || !isNaN(Number(n)) || minc ==0 || maxc == 0 || apc == 0) {
+    // console.log('error');
+    submitButton.style.background = 'red';
+    message.textContent = 'Please make sure you filled all fields correctly, all numbers should be above 0 and the city name should only contain letters!';
+    message.style.color = 'red';
+
+  } else {
+    let newCity = new City(n,minc,maxc,apc);
+    arrOfObjects.push(newCity);
+    // console.log('not error');
+    message.style.color = '#6b5340';
+    submitButton.style.background = 'green';
+    submitButton.textContent = 'City added succesfully!';
+    newCity.genRandCpH();
+    newCity.render();
+    setTimeout(() => { updateButton(); }, 1000); // I just googled how to make js wait
+
+  }
+}
+
+function resetthings(e) {
+  submitButton.textContent = 'Add a new City';
+  submitButton.style.background = 'wheat';
+  message.style.color = '#6b5340';
+}
+
+form.addEventListener('reset', resetthings);
+
+function updateButton() {
+  submitButton.textContent = 'Add City';
+  submitButton.style.background = 'wheat';
+  form.reset();
+}
+
