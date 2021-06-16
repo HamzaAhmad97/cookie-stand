@@ -143,7 +143,7 @@ main h1{
 }
 #top div h2 {
     font-family: 'Lobster', cursive;
-    margin: 1rem 1rem;
+    margin: 1rem 2rem;
 }
 #header1 {
     font-family: 'Lobster', cursive;
@@ -272,5 +272,90 @@ label {
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
+
+    background: orange; 
+  }
+  #otherImgs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* outline: red solid; */
+      margin: 2rem 6.25rem;
+      height: 275px;
+  }
+  #otherImgs div {
+    width: 16%;
+    margin: auto;
+    height: 250px; 
+    /* outline: yellow solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #otherImgs div img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 0;
+  }
+ 
+  #otherImgs #twoImgs div {
+      width: fit-content;
+      height: fit-content;
+      border-radius: 50%;
+      gap: 0;
+      /* border: blue solid; */
+      overflow: hidden;
+  }
+  #otherImgs #twoImgs div img{
+    height: 75px;
+    border-radius: 0%;
+    margin: auto;
+
+  }
+  
+  #otherImgs div p {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  ul, #ot{
+      /* outline: yellow solid; */
+      margin: 0 2rem;
+      margin-top: -1.5rem;
+    list-style-type: square;
+    list-style-position: inside;
+    font-family: 'Roboto', sans-serif;
+  }
+  ul li , #ot li{
+      /* outline: red solid; */
+      margin: 1rem;
+  }
+  #addresses li, #addresses a, #ot li{
+    font-size: 1.5rem;
+  }
+  #addresses a {
+      color: wheat;
+  }
+  #headingLi {
+      list-style-type:none;
+      padding-left: 2rem;
+      font-weight: bold;
+  }
+  #ot li {
+    list-style-type:none;
+  }
+  #ot li:first-child {
+    list-style-type:none;
+    padding-left: 2rem;
+    font-weight: bold;
+  }
+  #ot {
+      margin-top: 2rem;
+
     background: yellow; 
+
   }
