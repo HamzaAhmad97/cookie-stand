@@ -274,3 +274,50 @@ label {
   ::-webkit-scrollbar-thumb:hover {
     background: orange; 
   }
+  #otherImgs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* outline: red solid; */
+      margin: 2rem;
+      height: 275px;
+  }
+  #otherImgs div {
+    width: 16%;
+    margin: auto;
+    height: 250px; 
+    /* outline: yellow solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #otherImgs div img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 0;
+  }
+ 
+  #otherImgs #twoImgs div {
+      width: fit-content;
+      height: fit-content;
+      border-radius: 50%;
+      gap: 0;
+      /* border: blue solid; */
+      overflow: hidden;
+  }
+  #otherImgs #twoImgs div img{
+    height: 75px;
+    border-radius: 0%;
+    margin: auto;
+
+  }
+  
+  #otherImgs div p {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
