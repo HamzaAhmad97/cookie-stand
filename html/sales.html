@@ -50,8 +50,45 @@
 
     </header>
 
-
     <main id="main">
+
+        <section id="dataEntry">
+
+            <form id="form" action="">
+                <fieldset>
+                    <legend>Add a city branch: </legend>
+
+                    <div>
+                        <label for="fName">City name</label>
+                        <input id="fName" type="text" placeholder="Tokyo" required pattern="^[a-zA-Z]+$">
+                    </div>
+                        
+                    <div>
+                        <label for="fminC">Minimum number of customers per hour <strong>(only whole numbers)</strong></label>
+                        <input id="fminC" type="number" min="0" placeholder="3" required pattern="[0-9]+">
+                    </div>
+                        
+                    <div>
+                        <label for="fmaxC">Maximum number of customers per hour <strong>(only whole numbers)</strong></label>
+                        <input id="fmaxC" type="number" min="0" placeholder="24" required pattern="[0-9]+">
+                    </div>
+
+                    <div>
+                        <label for="avgCpC">Average number of cookies purchased per customer</label>
+                        <input id="avgCpC" type="number" min="0" placeholder="2.3" step="any" required pattern="[0-9]+.[0-9]+?">
+                    </div>
+
+                    <p id="message">p</p>
+                    <div id="buttons">
+                        <button id="submit" type="submit">Add city</button>
+                        <button id='reset' type="reset">Reset</button>
+                    </div>
+                    
+                </fieldset>
+                
+            </form>
+        </section>
+        <hr>
     </main>
     
     <footer id="footer">

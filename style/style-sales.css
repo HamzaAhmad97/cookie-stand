@@ -3,7 +3,7 @@ a { text-decoration: none;}
 h1,p,a,h2{font-family: 'Roboto', sans-serif;}
 body {
     display: grid;
-    grid-template-rows: 100px 500px 150px;
+    grid-template-rows: 100px 1fr 150px;
     grid-template-areas: "header"
                          "main"
                          "footer";
@@ -201,5 +201,74 @@ label {
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: orange; 
+    background: yellow; 
   }
+
+  #dataEntry {
+      width: 93.8%;
+      margin-bottom: 1rem;
+      /* outline: yellow solid 2px; */
+
+  }
+  #dataEntry form fieldset {
+      /* outline: blue solid 0.5rem; */
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  }
+  #dataEntry form fieldset legend {
+      margin: auto;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      font-size: 2rem;
+  }
+  #dataEntry form fieldset div {
+      display: flex;
+      /* outline: green solid ; */
+      flex-direction: column;
+      gap: 0.25rem;
+  }
+  #dataEntry form fieldset div label {
+      margin-left: 1rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+  }
+  #dataEntry form fieldset div input {
+      width: 10%;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      height: 1.5rem;
+      background-color: white;
+  }
+  #dataEntry form fieldset div input:focus {
+      animation-name: input;
+      animation-fill-mode: forwards;
+      animation-duration: 0.3s;
+  }
+  @keyframes input {
+      to {
+          background-color: yellow;
+          font-weight: bold;
+      }
+  }
+  hr {
+      width: 93.8%;
+      height: 2px;
+      background-color: black;
+      border: none;
+  }
+  #submit, #reset {
+      width: 15%;
+      margin: auto;
+      height: 3rem;
+    background-color: wheat;  
+    
+}
+#message {
+    /* outline: orange solid; */
+    text-align: center;
+    font-size: 1.5rem;
+    color:#6b5340 ;
+    font-weight: bold;
+    height: 2.75rem;
+}
