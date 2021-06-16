@@ -102,6 +102,9 @@ let lima = new City('Lima',2,16,4.6);
 lima.genRandCpH();
 lima.render();
 ////////////////////////////////////////////////////////
+let submitButton = document.getElementById('submit');
+let resetButton = document.getElementById('reset');
+let message = document.getElementById('message');
 
 function changeTheme(arg) {
 
@@ -123,12 +126,18 @@ function changeTheme(arg) {
     h.style.background = 'white';
     f.style.background = 'white';
     m.style.color = 'white';
+    message.textContent = '';
+    submitButton.style.backgroundColor = 'white';
+    resetButton.style.backgroundColor = 'white';
     break;
   case 'Mono':
     m.style.background = 'gray';
     h.style.background = 'gray';
     f.style.background = 'gray';
     m.style.color = 'black';
+    message.textContent = '';
+    submitButton.style.background = 'white';
+    resetButton.style.backgroundColor = 'white';
     break;
   default:
     m.style.background = '#6b5340';
@@ -141,8 +150,7 @@ function changeTheme(arg) {
 //////////////////////////////////////////////////////////
 let form = document.getElementById('form');
 form.addEventListener('submit', addCity);
-let submitButton = document.getElementById('submit');
-let message = document.getElementById('message');
+
 
 function addCity(e) {
   console.log('in addCity');
