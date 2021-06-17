@@ -1,5 +1,4 @@
 a { text-decoration: none;}
-h1,p,a,h2{font-family: 'Roboto', sans-serif;}
 body {
     display: grid;
     grid-template-rows: 100px 1fr 150px;
@@ -15,19 +14,6 @@ header {
     background: wheat;
     
 }
-/* body::after {
-    content: "";
-    background: url(/img/cookies1.webp);
-    background-position: left;
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
-    filter: blur(7px);
-  } */
 header img {
     width: 175px;
     margin: 1rem auto auto 5rem;
@@ -95,18 +81,7 @@ main {
     margin: 0 ;
     background: #6b5340 ;
 }
-/* main::after {
-    content: "";
-    background:#6b5340 ;
-    background-position: center;
-    opacity: 0.9;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; 
-} */
+
 main #fishdish {
     filter: blur(0px);
     height: 100px;
@@ -162,7 +137,7 @@ main article {
 main article p {
     font-size: 1.5rem;
     text-align: center;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
     margin: 1rem;
     line-height: 2rem;
 }
@@ -240,21 +215,17 @@ main section div img:hover {
         transform: scale(110%);
     }
 }
-label {
+/* label {
     font-family: 'Lato', sans-serif;
-}
-footer div section p{
+} */
+footer div section p, footer  p{
     background: none;
   }
-  footer  p{
-      background: none;
-}
+
 label {
     font-family: 'Lato', sans-serif;
     margin: 0.5rem;
 }
-
-
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -279,7 +250,6 @@ label {
       display: flex;
       align-items: center;
       justify-content: center;
-      /* outline: red solid; */
       margin: 2rem 6.25rem;
       height: 275px;
   }
@@ -287,7 +257,6 @@ label {
     width: 16%;
     margin: auto;
     height: 250px; 
-    /* outline: yellow solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -306,32 +275,27 @@ label {
       height: fit-content;
       border-radius: 50%;
       gap: 0;
-      /* border: blue solid; */
       overflow: hidden;
   }
   #otherImgs #twoImgs div img{
     height: 75px;
     border-radius: 0%;
     margin: auto;
-
   }
-  
   #otherImgs div p {
     font-family: 'Lobster', cursive;
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 3.5rem;
   }
-  ul, #ot{
-      /* outline: yellow solid; */
-      margin: 0 2rem;
-      margin-top: -1.5rem;
+  ul, #ot {
+    margin: 0 2rem;
+    margin-top: -1.5rem;
     list-style-type: square;
     list-style-position: inside;
-    font-family: 'Roboto', sans-serif;
+    background: w;
   }
   ul li , #ot li{
-      /* outline: red solid; */
       margin: 1rem;
   }
   #addresses li, #addresses a, #ot li{
@@ -355,5 +319,23 @@ label {
   }
   #ot {
       margin-top: 2rem;
-
   }
+  h1, p, a, h2, input, li, button, label, ul {
+    font-family: Georgia, Times;
+    color: wheat;
+}
+footer * {
+    color: black;
+}
+.h {
+    color: tomato;
+}
+ul, li { color: orange;}
+#ps {
+    background: wheat;
+}
+#ps p{
+    color:#6b5340 ;
+}
+label {color: #6b5340 ;
+}
