@@ -273,9 +273,12 @@ label {
     font-weight: bold;
     height: 2.75rem;
 }
-h1, p, a, h2, input, li, button, label, ul , td{
+h1, p, a, h2, li, button, label, ul , td{
     font-family: Georgia, Times;
     color: wheat;
+}
+input {
+    color: black;
 }
 legend {color: #6b5340;}
 td { color: whitesmoke;}
