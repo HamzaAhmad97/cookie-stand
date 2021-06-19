@@ -172,7 +172,6 @@ function addCity(e) {
     let newCity = new City(n,minc,maxc,apc);
     arrOfObjects.push(newCity);
     // console.log('not error');
-    message.style.color = '#6b5340';
     submitButton.style.background = 'green';
     submitButton.textContent = 'City added succesfully!';
     newCity.genRandCpH();
